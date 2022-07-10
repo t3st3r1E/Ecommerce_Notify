@@ -4,6 +4,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout
+from django.core.mail import send_mail
+from django.conf import settings
 
 from .forms import RegisterForm
 from .forms import LoginForm
@@ -68,3 +70,31 @@ def logout_view(request):
     logout(request)
     # redirect user to home page
     return HttpResponseRedirect('/')
+
+def checkout(request):
+    context = {}
+    if request.user:
+        if request.method == 'POST':
+            message = "From "+request.user.email+"\n"
+            message += "Sender name "+request.user.first_name +""+ request.user.last_name+"\n"
+            message += "Netflix Payment Done"+"\n"
+            try:
+                send_mail(
+                    'SITE Inquiry'+message,
+                    message,
+                    request.user.email,
+                    ['mane_csit2075@lict.edu.np'],
+                    )
+                context = {'mail_respone':True }
+            except Exception as err:
+                raise err
+        return render(request,'netflix/checkout.html')
+
+def success_payment(request):
+    return render(request,'netflix/success_payment.html',context)
+
+
+#def success_payment(request):
+    if request.method == "POST":
+        email = request.POST['username']
+        return HttpResponse('')

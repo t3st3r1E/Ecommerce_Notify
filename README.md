@@ -15,3 +15,7 @@ Just follow these few step:
 - `python manage.py runserver`
 
 ## Run tests
+# e-commerce
+# e-commerce
+# e-commerce
+# e-commerce

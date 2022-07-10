@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.conf import settings            # Add this line
 from django.conf.urls.static import static  # Add this line
 
@@ -25,7 +25,7 @@ from netflix.views import logout_view # Add this line
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_view, name='home'), # Add this line
+    path('', include('netflix.urls')),
     path('register', register_view, name='register'), # Add this line
     path('login', login_view, name='login'), # Add this line
     path('logout', logout_view, name='logout'), # Add this line
