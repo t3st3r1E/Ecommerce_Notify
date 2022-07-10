@@ -1,9 +1,9 @@
 # django-netflix-clone
 A simple full-stack clone of Netflix website using Django
 
-## This project is the result of this [Dev.to](https://dev.to/fayomihorace/build-a-netflix-clone-with-django-part-1-complete-beginner-course-3al3) tutorial [Build a Netflix clone with Django (Complete beginner course)](https://dev.to/fayomihorace/build-a-netflix-clone-with-django-part-1-complete-beginner-course-3al3).
-If you're already familiar with Django, you don't need to follow the tutorial.
-Just follow these few step:
+
+## This is a cloned website. I tried making some changes updating the feature of sending gmail notification. Checkout the templates folder and settings.py file of this Repo for further info.
+
 
 ## Setup the project
 - `virtualenv venv` (make sure you have `virtualenv` installed)
