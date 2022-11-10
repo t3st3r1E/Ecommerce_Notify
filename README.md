@@ -14,8 +14,3 @@ A simple full-stack clone of Netflix website using Django
 ## Start the developement server
 - `python manage.py runserver`
 
-## Run tests
-# e-commerce
-# e-commerce
-# e-commerce
-# e-commerce
