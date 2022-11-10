@@ -92,9 +92,3 @@ def checkout(request):
 
 def success_payment(request):
     return render(request,'netflix/success_payment.html',context)
-
-
-#def success_payment(request):
-    if request.method == "POST":
-        email = request.POST['username']
-        return HttpResponse('')
